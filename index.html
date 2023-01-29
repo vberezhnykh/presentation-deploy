@@ -1,40 +1,359 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-video="./assets/video/timeline.mp4"
+          data-background-video-loop="true"
+          data-background-video-muted="true"
+          data-background-opacity="0.3"
+        >
+          <h1>History API</h1>
+        </section>
+        <section>
+          <h1>What is History API?</h1>
+        </section>
+        <section>
+          <section><h2>Meaning</h2></section>
+          <section>
+            The History interface allows manipulation of the browser session
+            history, that is the pages visited in the tab or frame that the
+            current page is loaded in.
+          </section>
+          <section><h2>Usage</h2></section>
+          <section
+            data-background-video="./assets/video/navigation_disabled.mp4"
+            data-background-size="contain"
+            data-background-video-loop="true"
+          ></section>
+          <section
+            data-background-video="./assets/video/backbutton_enabled.mp4"
+            data-background-size="contain"
+            data-background-video-loop="true"
+          ></section>
+          <section
+            data-background-video="./assets/video/click_on_backbutton.mp4"
+            data-background-size="contain"
+            data-background-video-loop="true"
+          ></section>
+          <section
+            data-background-video="./assets/video/click_on_forwardbutton.mp4"
+            data-background-size="contain"
+            data-background-video-loop="true"
+          ></section>
+          <section
+            data-background-video="./assets/video/navigation_enabled.mp4"
+            data-background-size="contain"
+            data-background-video-loop="true"
+          ></section>
+          <section><h2>Methods</h2></section>
+          <section>
+            <ul>
+              <li>back()</li>
+              <li>forward()</li>
+              <li>go()</li>
+              <li>pushState()</li>
+              <li>replaceState()</li>
+            </ul>
+          </section>
+          <section>
+            <h2>back()</h2>
+            <p>
+              The History.back() method causes the browser to move back one page
+              in the session history.
+            </p>
+            <pre>
+							<code>history.back()</code>
+						</pre
+            >
+          </section>
+          <section
+            data-background-image="./assets/images/default_page.png"
+            data-background-size="contain"
+          ></section>
+          <section
+            data-background-image="./assets/images/console_back.png"
+            data-background-size="contain"
+          ></section>
+          <section
+            data-background-image="./assets/images/back_page.png"
+            data-background-size="contain"
+          ></section>
+          <section
+            data-background-image="./assets/images/console_back_undefined.png"
+            data-background-size="contain"
+          ></section>
+          <section>
+            <h2>forward()</h2>
+            <p>
+              The History.forward() method causes the browser to move forward
+              one page in the session history.
+            </p>
+            <pre><code>history.forward()</code></pre>
+          </section>
+          <section
+            data-background-image="./assets/images/default_page.png"
+            data-background-size="contain"
+          ></section>
+          <section
+            data-background-image="./assets/images/console_forward.png"
+            data-background-size="contain"
+          ></section>
+          <section
+            data-background-image="./assets/images/forward_page.png"
+            data-background-size="contain"
+          ></section>
+          <section
+            data-background-image="./assets/images/console_forward_undefined.png"
+            data-background-size="contain"
+          ></section>
+          <section>
+            <h2>go()</h2>
+            <p>
+              The History.go() method loads a specific page from the session
+              history.
+            </p>
+            <pre><code>
+							history.go() 
+							history.go(delta) 
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+							history.go() === history.go(0)
+							history.go(1) === history.forward()
+							history.go(-1) === history.back()
+						</code></pre>
+            <p></p>
+          </section>
+          <section>
+            <pre><code>history.go(2)</code></pre>
+            <img src="./assets/images/console_go_2.PNG" alt="" />
+          </section>
+          <section>
+            <pre><code>history.go(2)</code></pre>
+            <img src="./assets/images/forward_page.PNG" alt="" />
+          </section>
+          <section>
+            <pre><code>history.go(-2)</code></pre>
+            <img src="./assets/images/console_go_minus_2.PNG" alt="" />
+          </section>
+          <section>
+            <pre><code>history.go(-2)</code></pre>
+            <img src="./assets/images/back_page.PNG" alt="" />
+          </section>
+          <section>
+            <pre><code>history.length</code></pre>
+            <p>
+              An integer representing the number of elements in the session
+              history, including the currently loaded page.
+            </p>
+            <img src="./assets/images/length.PNG" alt="" />
+          </section>
+          <section><h2 class="r-fit-text">What is state?</h2></section>
+          <section>
+            <pre><code>history.state</code></pre>
+            <p>
+              Property that returns the serialized state of the active session
+              history entry, deserialized into a JavaScript value.
+            </p>
+          </section>
+          <section>
+            <h2>Session history entry</h2>
+            <p>
+              Refer to the URLs that a user has visited in a browser. Each entry
+              in the history stack corresponds to a specific URL and has an
+              associated state object.
+            </p>
+          </section>
+          <section>
+            <pre><code>
+							<body>
+								<nav>
+									<button id="1">Page 1</button>
+									<button id="2">Page 2</button>
+									<button id="3">Page 3</button>
+								</nav>
+								<main id="main"></main>
+							</body>
+						</code></pre>
+          </section>
+          <section>
+            <img
+              src="./assets/images/demo/default_page_empty_main.PNG"
+              alt=""
+            />
+          </section>
+          <section>
+            <h2>replaceState()</h2>
+            <p>
+              The History.replaceState() method modifies the current history
+              entry, replacing it with the state object and URL passed in the
+              method parameters.
+            </p>
+            <pre><code>
+							replaceState(stateObj, unused)
+							replaceState(stateObj, unused, url)
+						</code></pre>
+          </section>
+          <section>
+            <pre><code>
+							<!-- <script> -->
+								const main = document.getElementById("main");
+								history.replaceState("the default page.", "");
+								main.innerText = `This is ${history.state}`;
+							<!-- </script> -->
+						</code></pre>
+          </section>
+          <section>
+            <img src="./assets/images/demo/replaceState.PNG" alt="" />
+          </section>
+          <section>
+            <h2>pushState()</h2>
+            <p>
+              The history.pushState() method adds an entry to the browser's
+              session history stack.
+            </p>
+            <pre><code>
+							pushState(stateObj, unused)
+							pushState(stateObj, unused, url)
+						</code></pre>
+          </section>
+          <section>
+            <pre>
+							<code>
+<!-- <script> -->
+	const main = document.getElementById("main");
+	history.replaceState("the default page.", "");
+	main.innerText = `This is ${history.state}`;
+	const navBtns = [...document.getElementsByTagName("button")];
+	navBtns.forEach((navBtn) => {
+		navBtn.onclick = () => {
+			history.pushState(`Page ${navBtn.id}`, null, navBtn.id);
+			main.innerText = `This is Page ${navBtn.id}`;
+		};
+	});
+<!-- </script> -->
+							</code>
+						</pre>
+          </section>
+          <section>
+            <img src="./assets/images/demo/pushState_1.PNG" alt="" />
+          </section>
+          <section>
+            <img src="./assets/images/demo/pushState_2.PNG" alt="" />
+          </section>
+          <section>
+            <img src="./assets/images/demo/pushState_3.PNG" alt="" />
+          </section>
+          <section>
+            <h2>popstate event</h2>
+            <p>
+              The popstate event of the Window interface is fired when the
+              active history entry changes while the user navigates the session
+              history.
+            </p>
+          </section>
+          <section>
+            <h2>popstate event</h2>
+            <pre>
+							<code>
+					<script>
+						window.onpopstate = (event) => console.log(event);
+					</script>
+						</code>
+						</pre>
+          </section>
+          <section>
+            <img src="./assets/images/demo/popstateEvent.PNG" alt="" />
+          </section>
+          <section>
+            <pre>
+							<code>
+<!-- <script> -->
+	const main = document.getElementById("main");
+	history.replaceState("the default page.", "");
+	main.innerText = `This is ${history.state}`;
+	const navBtns = [...document.getElementsByTagName("button")];
+	navBtns.forEach((navBtn) => {
+		navBtn.onclick = () => {
+			history.pushState(`Page ${navBtn.id}`, null, navBtn.id);
+			main.innerText = `This is Page ${navBtn.id}`;
+		};
+	});
+	window.onpopstate = (event) => {
+		main.innerText = `This is ${event.state}`;
+	} 
+<!-- </script> -->
+							</code>
+						</pre>
+          </section>
+          <section
+            data-background-video="./assets/video/demo.mp4"
+            data-background-video-loop="true"
+            data-background-video-muted="true"
+            data-background-size="contain"
+          ></section>
+          <section><h2>Properties</h2></section>
+          <section>
+            <ul>
+              <li>state</li>
+              <li>length</li>
+              <li>scrollRestoration</li>
+            </ul>
+          </section>
+          <section>
+            <h2>scrollRestoration</h2>
+            <p>
+              The scrollRestoration property of History interface allows web
+              applications to explicitly set default scroll restoration behavior
+              on history navigation.
+            </p>
+          </section>
+          <section
+            data-background-video="./assets/video/scrollRestoration.mp4"
+            data-background-video-loop="true"
+            data-background-video-muted="true"
+            data-background-size="contain"
+          ></section>
+          <section><h2>Browser compatibility</h2></section>
+          <section>
+            <h2>Browser compatibility</h2>
+            <img src="./assets/images/browser_compatibility.PNG" alt="" />
+          </section>
+        </section>
+        <section>Thanks for your attention!</section>
+      </div>
+    </div>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
